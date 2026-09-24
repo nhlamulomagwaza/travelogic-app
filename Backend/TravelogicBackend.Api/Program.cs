@@ -64,7 +64,7 @@ builderApp.UseExceptionHandler();
 
 if (builderApp.Environment.IsDevelopment())
 {
-    builderApp.MapOpenApi();
+    builderApp.MapOpenApi();pp
 }
 
 builderApp.UseHttpsRedirection();
