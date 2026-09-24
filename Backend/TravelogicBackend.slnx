@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="TravelogicBackend.Api/TravelogicBackend.Api.csproj" />
+  <Project Path="TravelogicBackend.Application/TravelogicBackend.Application.csproj" />
+  <Project Path="TravelogicBackend.Domain/TravelogicBackend.Domain.csproj" />
+  <Project Path="TravelogicBackend.Infrastructure/TravelogicBackend.Infrastructure.csproj" />
+  <Project Path="TravelogicBackend.UnitTests/TravelogicBackend.UnitTests.csproj" />
+</Solution>

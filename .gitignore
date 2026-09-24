@@ -1,0 +1,54 @@
+# ==========================================
+# .NET
+# ==========================================
+[Bb]in/
+[Oo]bj/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+*.dbml
+project.lock.json
+project.fragment.lock.json
+artifacts/
+ClientBin/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]uild/
+[Ll]ogs/
+*.lock.json
+
+# Entity Framework Core local SQLite files
+*.db
+*.db-journal
+
+# ==========================================
+# Node / Frontend (Vite, React, NPM)
+# ==========================================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

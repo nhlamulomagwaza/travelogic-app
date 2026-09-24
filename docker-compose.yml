@@ -1,0 +1,56 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: travelogic_db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=milkshakes@123
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+    networks:
+      - travelogic-net
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: travelogic_api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=TravelogicDb;User Id=sa;Password=milkshakes@123;TrustServerCertificate=True;
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    depends_on:
+      - sqlserver
+    networks:
+      - travelogic-net
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./Frontend/travelogic-client
+      dockerfile: Dockerfile
+    container_name: travelogic_client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Frontend/travelogic-client:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0
+    depends_on:
+      - api
+    networks:
+      - travelogic-net
+    restart: unless-stopped
+
+volumes:
+  sqldata:
+
+networks:
+  travelogic-net:
+    driver: bridge
