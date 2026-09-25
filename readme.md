@@ -1,10 +1,10 @@
-# Travelogic System
+# Travelogic App
 
-While this is a test project, I have built it to closely mimick my day to day approach when building apps. You will discover that this is a full-stack application structured around clean architecture principles, robust backend design patterns, and a scalable frontend state management layer.
+While this is a test/assessment project, I have built it to closely mimick my day to day approach when building apps. You will discover that this is a full-stack application structured around clean architecture principles, robust backend design patterns, and a scalable frontend state management layer.
 
 ## Project Structure
 
-The repository is divided into two primary directories:
+This git repository is divided into two primary directories:
 - `Backend/`: .NET Web API utilizing Clean Architecture.
 - `Frontend/`: Vite React and TypeScript client.
 
@@ -37,11 +37,11 @@ The frontend I built it with Vite, React, and TypeScript, focusing on maintainab
 ## Running the Project
 
 ### Requirements
-- Docker Desktop (You will need it to spin up the API, database and react client in one command)
-- .NET SDK (Fallback, if the docker command fails, please kindly run it locally)
-- Node.js & npm (Fallback, please run the react client locally if docker fails)
+- Docker Desktop (This is for the 1st option to run this, You will need docker desktop to spin up the API, database and react client in one command)
+- .NET SDK (Option 2, if the docker command fails or you prefer to spin it up locally, kindly run it on your local machine)
+- Node.js & npm (Option 2, please run the react client locally if docker fails)
 
-### Method 1: Running via Docker (Recommended)
+### Method 1: Running via Docker
 I have included a root `docker-compose.yml` file that builds and spins up the SQL Server database, backend API, and frontend client containers inside a shared bridge network.
 
 1. Ensure Docker Desktop is running.
@@ -51,10 +51,10 @@ I have included a root `docker-compose.yml` file that builds and spins up the SQ
    ```
 3. Access the application:
    - **Frontend Client:** http://localhost:5173
-   - **Backend API:** http://localhost:5298 (or http://localhost:5001)
+   - **Backend API:** http://localhost:5298 
 
 ### Method 2: Manual Fallback Execution
-If Docker fails or you prefer running these apps locally on your machine:
+Docker should not fail to build. But because sql server is large to download via docker, the docker cli tends to drop downloads and restart them continously on standard wifi networks. So if Docker fails you can run these apps locally on your machine. I believe you could also just prefer to run them locally.
 
 1. **Database**: Spin up a local SQL Server instance and ensure your connection string in `Backend/TravelogicBackend.Api/appsettings.json` points to it.
 2. **Backend**:
